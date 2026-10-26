@@ -1,0 +1,59 @@
+{
+  "slug": "decision-matrix",
+  "url": "https://nanalab.kr/decision-matrix/",
+  "languages": [
+    "ko",
+    "en",
+    "es",
+    "zh",
+    "ja",
+    "de"
+  ],
+  "locales": {
+    "ko": {
+      "name": "의사결정 가중표",
+      "description": "기준별 가중치와 대안별 점수를 입력해 기본·시나리오 순위와 점수 기여도를 비교하세요.",
+      "image_alt": "의사결정 가중표"
+    },
+    "en": {
+      "name": "Decision Matrix",
+      "description": "Enter criterion weights and option scores to compare baseline and scenario rankings and score contributions.",
+      "image_alt": "Decision Matrix"
+    },
+    "es": {
+      "name": "Matriz de decisión",
+      "description": "Introduce pesos por criterio y puntuaciones de alternativas para comparar clasificaciones base, escenarios y contribuciones.",
+      "image_alt": "Matriz de decisión"
+    },
+    "zh": {
+      "name": "加权决策矩阵",
+      "description": "输入各标准权重与各方案评分，对比基准、情景排名及得分贡献。",
+      "image_alt": "加权决策矩阵"
+    },
+    "ja": {
+      "name": "意思決定の加重表",
+      "description": "基準ごとの重みと選択肢の点数を入力し、基本・シナリオの順位と点数への寄与を比較できます。",
+      "image_alt": "意思決定の加重表"
+    },
+    "de": {
+      "name": "Gewichtete Entscheidungsmatrix",
+      "description": "Geben Sie Kriteriengewichte und Bewertungen ein, um Basis- und Szenariorangfolgen sowie Punktebeiträge zu vergleichen.",
+      "image_alt": "Gewichtete Entscheidungsmatrix"
+    },
+    "fr": {
+      "name": "Matrice de décision",
+      "description": "Saisissez les poids des critères et les notes des options pour comparer les classements de référence, les scénarios et les contributions aux scores.",
+      "image_alt": "Matrice de décision"
+    },
+    "pt": {
+      "name": "Matriz de decisão",
+      "description": "Informe pesos dos critérios e notas das alternativas para comparar classificações base, cenários e contribuições para a pontuação.",
+      "image_alt": "Matriz de decisão"
+    },
+    "ru": {
+      "name": "Матрица решений",
+      "description": "Задавайте веса критериев и оценки вариантов, чтобы сравнивать базовый и сценарный рейтинги и вклад в итоговые баллы.",
+      "image_alt": "Матрица решений"
+    }
+  }
+}

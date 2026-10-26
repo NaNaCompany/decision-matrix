@@ -1,0 +1,13 @@
+import assert from'node:assert/strict';import{parseMatrix,calculate,csv}from'./dist/core.js';
+const r=calculate(parseMatrix('Quality|3|1\nCost|1|3','A|100|0\nB|0|100\nC|60|60'));
+assert.deepEqual(r.rows.map(x=>[x.name,x.total,x.rank,x.scenarioTotal,x.scenarioRank]),[['A',75,1,25,3],['C',60,2,60,2],['B',25,3,75,1]]);
+assert.deepEqual(r.rows[0].contributions,[75,0]);assert.equal(r.criteria[0].scenarioShare,.25);
+const t=calculate(parseMatrix('X|1|2\nY|1|2','A|100|0\nB|50|50\nC|0|0'));assert.deepEqual(t.rows.map(x=>x.rank),[1,1,3]);
+const z=calculate(parseMatrix('X|0|1\nY|2|0','A|100|20'));assert.equal(z.rows[0].total,20);assert.equal(z.rows[0].scenarioTotal,100);
+assert.throws(()=>parseMatrix('X|0|1','A|20'),e=>e.code==='zeroBase');assert.throws(()=>parseMatrix('X|1|0','A|20'),e=>e.code==='zeroScenario');
+assert.throws(()=>parseMatrix('X|-1|2','A|20'),e=>e.code==='weight');assert.throws(()=>parseMatrix('X|1|2','A|'),e=>e.code==='score');
+assert.throws(()=>parseMatrix('X|1|2','A|101'),e=>e.code==='score');assert.throws(()=>parseMatrix('X|1|2','A|20|30'),e=>e.code==='scoreFields');
+assert.throws(()=>parseMatrix('X|1|2\nX|2|3','A|20|30'),e=>e.code==='criterionName');assert.throws(()=>parseMatrix('X|1|2','A|20\nA|30'),e=>e.code==='optionName');
+assert.equal(calculate(parseMatrix('X|0.1|0.3\nY|0.2|0.7','A|30|60')).rows[0].total,50);
+assert.ok(csv([['=SUM(A1)','x"y']],['A','B']).includes('"\'=SUM(A1)","x""y"'));
+console.log('14 fixture groups passed: weighted totals, contributions, scenario rank reversal, ties, zero criterion weight, both zero denominators, negative weight, blank/out-of-range score, field mismatch, duplicate labels, decimal weights and CSV escaping.');
